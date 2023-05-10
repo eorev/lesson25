@@ -48,6 +48,8 @@ def main(fileName):
     print(totalDistance)
 
 
-if __name__ == "__main__":
-    fileName = input()
-    main(fileName)
+def main(fileName):
+    distances = readInput(fileName)
+    path, totalDistance = findShortestPath(distances)
+    print(" ".join(str(vertex) for vertex in path))
+    print(totalDistance)
