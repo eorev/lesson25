@@ -2,9 +2,7 @@ def readInput(fileName):
     try:
         with open(fileName, 'r') as file:
             lines = file.readlines()
-            print(f"Lines in the file: {lines}")  # Print the lines read from the file
             distances = [list(map(int, line.strip().split())) for line in lines]
-            print(f"Distances: {distances}")  # Print the parsed distances
             return distances
     except FileNotFoundError:
         print(f"File {fileName} not found.")
