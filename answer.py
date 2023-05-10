@@ -41,15 +41,13 @@ def findShortestPath(distances):
 
 
 def main(fileName):
-    distances = readInput(fileName)
-    path, totalDistance = findShortestPath(distances)
-    for vertex in path:
-        print(vertex)
-    print(totalDistance)
-
-
-def main(fileName):
-    distances = readInput(fileName)
-    path, totalDistance = findShortestPath(distances)
-    print(' '.join(str(vertex) for vertex in path))
-    print(totalDistance)
+    try:
+        distances = readInput(fileName)
+        if distances is not None:  # Make sure we have distances to work with
+            path, totalDistance = findShortestPath(distances)
+            print(' '.join(str(vertex) for vertex in path))
+            print(totalDistance)
+        else:  # If distances is None, there was a problem reading the file
+            print("Error: No distances provided.")
+    except Exception as e:
+        print(f"Error in main: {e}")
