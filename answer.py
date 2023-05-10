@@ -51,4 +51,5 @@ def main(filename):
     print(totalDistance)  # Print the total distance
 
 if __name__ == "__main__":
-    main("input.txt")
+    filename = input()
+    main(filename)
