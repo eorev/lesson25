@@ -1,13 +1,13 @@
-def readInput(fileName):
+def readInput(filename):
     try:
-        with open(fileName, 'r') as file:
+        with open(filename, 'r') as file:
             lines = file.readlines()
             distances = [list(map(int, line.strip().split())) for line in lines]
             return distances
     except FileNotFoundError:
-        return f"File {fileName} not found."
+        return f"File {filename} not found."
     except Exception as e:
-        return f"Error when reading file {fileName}: {e}"
+        return f"Error when reading file {filename}: {e}"
 
 def findShortestPath(distances):
     n = len(distances)
@@ -36,8 +36,11 @@ def findShortestPath(distances):
 
     return path, totalDistance
 
-def main(input_data):
-    distances = readInput(input_data)
+def main(filename):
+    distances = readInput(filename)
     path, totalDistance = findShortestPath(distances)
     print('\n'.join(str(vertex) for vertex in path))  # Print the path
     print(totalDistance)  # Print the total distance
+
+if __name__ == "__main__":
+    main("input.txt")
