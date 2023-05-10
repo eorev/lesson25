@@ -28,7 +28,7 @@ def findShortestPath(distances):
 
         if nextVertex == -1:  # If there are no more reachable vertices, find the closest unvisited vertex
             for vertex in range(n):
-                if not visited[vertex]:
+                if visited[vertex]:  # Only consider visited vertices
                     for otherVertex in range(n):
                         if not visited[otherVertex] and distances[vertex][otherVertex] < shortestDistance:
                             shortestDistance = distances[vertex][otherVertex]

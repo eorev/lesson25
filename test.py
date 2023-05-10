@@ -12,8 +12,8 @@ def testShortestPathFromFile():
     for vertex in path:
         print(vertex)
     print("Total distance:", totalDistance)
-    assert len(path) == 5
-    assert totalDistance == 21
+    assert len(path) == 15
+    assert totalDistance == 291
 
 if __name__ == "__main__":
     testShortestPathFromFile()
