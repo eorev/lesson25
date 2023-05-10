@@ -5,10 +5,9 @@ def readInput(fileName):
             distances = [list(map(int, line.strip().split())) for line in lines]
             return distances
     except FileNotFoundError:
-        print(f"File {fileName} not found.")
+        return f"File {fileName} not found."
     except Exception as e:
-        print(f"Error when reading file {fileName}: {e}")
-    return None
+        return f"Error when reading file {fileName}: {e}"
 
 def findShortestPath(distances):
     n = len(distances)
@@ -37,15 +36,11 @@ def findShortestPath(distances):
 
     return path, totalDistance
 
-
 def main(fileName):
-    try:
-        distances = readInput(fileName)
-        if distances is not None:  # Make sure we have distances to work with
-            path, totalDistance = findShortestPath(distances)
-            print(' '.join(str(vertex) for vertex in path))
-            print(totalDistance)
-        else:  # If distances is None, there was a problem reading the file
-            print("Error: No distances provided.")
-    except Exception as e:
-        print(f"Error in main: {e}")
+    distances = readInput(fileName)
+    if isinstance(distances, list):
+        path, totalDistance = findShortestPath(distances)
+        print(' '.join(str(vertex) for vertex in path))
+        print(totalDistance)
+    else:
+        print(distances)
