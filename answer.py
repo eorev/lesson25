@@ -51,5 +51,5 @@ def main(fileName):
 def main(fileName):
     distances = readInput(fileName)
     path, totalDistance = findShortestPath(distances)
-    print(" ".join(str(vertex) for vertex in path))
+    print(' '.join(str(vertex) for vertex in path))
     print(totalDistance)
