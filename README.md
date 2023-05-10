@@ -1,7 +1,9 @@
-The problem we're trying to solve is the Traveling Salesman Problem, which is to find the shortest possible route that visits every city exactly once and returns to the starting city.
+# Problem
 
-To solve this problem, we're using a simple algorithm that starts at a given vertex and repeatedly chooses the nearest unvisited vertex, adding it to the path until all vertices have been visited. We're keeping track of the path we've taken and the total distance traveled.
+This program is designed to solve the Traveling Salesman Problem. The goal of this problem is to find the shortest possible route that a traveling salesman can take, given that they must visit each city once and only once, then return to their starting city.
 
-We read the input from a file, which contains a matrix of distances between cities. We then run the algorithm on this matrix to find the shortest path. Finally, we print the path taken and the total distance traveled.
+# Solution
 
-Overall, this solution is a simple and effective way to solve the Traveling Salesman Problem for small to medium-sized datasets. However, for larger datasets, more complex algorithms may be needed to find an optimal solution.
+The solution is based on a simple greedy algorithm: starting from a given city, the algorithm will choose the nearest unvisited city, mark it as visited, and add it to the route. This process is repeated until all cities have been visited.
+
+The algorithm keeps track of the route taken and the total distance covered. The input to the algorithm is a matrix of distances between cities, which is read from an input file. After running the algorithm on the matrix, the shortest route and the total distance are printed out.
