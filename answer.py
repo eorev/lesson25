@@ -18,7 +18,7 @@ def findShortestPath(distances):
     visited[currentVertex] = True
 
     totalDistance = 0
-    for distance in range(n - 1):
+    for _ in range(n - 1):
         shortestDistance = float('inf')
         nextVertex = -1
         for vertex in range(n):
@@ -36,11 +36,8 @@ def findShortestPath(distances):
 
     return path, totalDistance
 
-def main(fileName):
-    distances = readInput(fileName)
-    if isinstance(distances, list):
-        path, totalDistance = findShortestPath(distances)
-        print(' '.join(str(vertex) for vertex in path))
-        print(totalDistance)
-    else:
-        print(distances)
+def main(input_data):
+    distances = readInput(input_data)
+    path, totalDistance = findShortestPath(distances)
+    print('\n'.join(str(vertex) for vertex in path))  # Print the path
+    print(totalDistance)  # Print the total distance
